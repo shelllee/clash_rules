@@ -1,4 +1,4 @@
-rule-providers:
+mix-rule-providers:
   reject:
     type: http
     behavior: domain
@@ -97,7 +97,7 @@ rule-providers:
     path: ./ruleset/applications.yaml
     interval: 86400
 
-rules:
+prepend-rules:
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
