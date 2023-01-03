@@ -10,8 +10,8 @@ module.exports.parse = async (raw, { axios, yaml, notify, console }, { name, url
     let content = yaml.parse(raw)
     let parser = yaml.parse(data)
 
-    let content_key = 'mix-rule-providers'
-    let parser_key = content_key
+    let content_key = 'rule-providers'
+    let parser_key = 'mix-' + content_key
 
     if (parser[parser_key] !== undefined)
     {
