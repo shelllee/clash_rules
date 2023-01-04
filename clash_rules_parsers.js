@@ -7,31 +7,58 @@ module.exports.parse = async (raw, { axios, yaml, notify, console }, { name, url
         return raw
     }
 
-    let content = yaml.parse(raw)
-    let parser = yaml.parse(data)
-
-    let content_key = 'rule-providers'
-    let parser_key = 'mix-' + content_key
-
-    if (parser[parser_key] !== undefined)
-    {
-        content[content_key] = parser[parser_key]
+    const yaml_value_type = {
+        yaml_array: Symbol("yaml_array"),
+        yaml_object: Symbol("yaml_object")
     }
 
-    content_key = 'rules'
-    parser_key = 'prepend-' + content_key
+    const method_type = {
+        prepend: Symbol("prepend"),
+        append: Symbol("append"),
+        mix: Symbol("mix")
+    }
 
-    if (parser[parser_key] !== undefined)
+    function merge(content, parser, value_type, method, key)
     {
-        if (content[content_key] === undefined)
+        let parser_key = [method.description, key].join('-')
+
+        console.log('process ' + parser_key)
+
+        if (parser[parser_key] === undefined)
         {
-            content[content_key] = []
+            console.log('parser ' + parser_key + ' not exist')
+            return
         }
 
-        content[content_key] = parser[parser_key].concat(content[content_key])
+        if (content[key] === undefined)
+        {
+            content[key] = value_type === yaml_value_type.yaml_object ? {} : value_type === yaml_value_type.yaml_array ? [] : ""
+        }
+
+        if (value_type === yaml_value_type.yaml_object)
+        {
+            content[key] = {...parser[parser_key], ...content[key]}
+        }
+        else if (value_type === yaml_value_type.yaml_array)
+        {
+            if (method == method_type.prepend)
+            {
+                content[key] = [...parser[parser_key], ...content[key]]
+            }
+            else //if (method == method_type.append)
+            {
+                content[key] = [...content[key], ...parser[parser_key]]
+            }
+        }
     }
 
-    let result = yaml.stringify(content)
+    let profile = yaml.parse(raw)
+    let parsers = yaml.parse(data)
+
+    merge(profile, parsers, yaml_value_type.yaml_object, method_type.mix,     'rule-providers')
+    merge(profile, parsers, yaml_value_type.yaml_array,  method_type.prepend, 'rules')
+
+    let result = yaml.stringify(profile)
 
     console.log(result)
 
