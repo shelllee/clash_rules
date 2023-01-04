@@ -60,7 +60,7 @@ module.exports.parse = async (raw, { axios, yaml, notify, console }, { name, url
 
     let result = yaml.stringify(profile)
 
-    console.log(result)
+    // console.log(result)
 
     return result
 }
