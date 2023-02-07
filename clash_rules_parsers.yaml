@@ -102,6 +102,7 @@ parsers: # array
       
       prepend-rules:
         - RULE-SET,applications,DIRECT
+        - DOMAIN,openai.com,PROXY
         - DOMAIN,clash.razord.top,DIRECT
         - DOMAIN,yacd.haishan.me,DIRECT
         - RULE-SET,private,DIRECT
