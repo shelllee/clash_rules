@@ -99,7 +99,7 @@ mix-rule-providers:
 
 prepend-rules:
   - RULE-SET,applications,DIRECT
-  - DOMAIN-SUFFIX,openai.com,PROXY
+  - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
   - RULE-SET,private,DIRECT
