@@ -60,6 +60,8 @@ module.exports.parse = async (raw, { axios, yaml, notify, console }, { name, url
 
     let result = yaml.stringify(profile)
 
+    result = result.replace(/-\s+name/g, '- \n    name')
+
     // console.log(result)
 
     return result
