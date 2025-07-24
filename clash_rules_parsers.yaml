@@ -101,8 +101,8 @@ parsers: # array
           interval: 86400
       
       prepend-rules:
-        - DOMAIN-SUFFIX,nikke-global.com,PROXY
-        - DOMAIN-SUFFIX,awsglobalaccelerator.com,PROXY
+        - DOMAIN-SUFFIX,nikke-global.com,Proxy
+        - DOMAIN-SUFFIX,awsglobalaccelerator.com,Proxy
         - RULE-SET,applications,DIRECT
         - DOMAIN,openai.com,PROXY
         - DOMAIN,clash.razord.top,DIRECT
