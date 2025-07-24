@@ -98,8 +98,8 @@ mix-rule-providers:
     interval: 86400
 
 prepend-rules:
-  - DOMAIN-SUFFIX,nikke-global.com,PROXY
-  - DOMAIN-SUFFIX,awsglobalaccelerator.com,PROXY
+  - DOMAIN-SUFFIX,nikke-global.com,Proxy
+  - DOMAIN-SUFFIX,awsglobalaccelerator.com,Proxy
   - RULE-SET,applications,DIRECT
   - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN,clash.razord.top,DIRECT
