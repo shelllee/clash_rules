@@ -17,3 +17,11 @@ parsers: # array
       url: https://github.com/shelllee/clash_rules/blob/main/clash_rules_parsers.js?raw=true
       cache: false
 ```
+
+```yaml
+parsers: # array
+  - reg: .+.trojanflare.+$
+    remote:
+      url: https://github.com/shelllee/clash_rules/blob/main/clash_rules_parsers.js?raw=true
+      cache: false
+```
