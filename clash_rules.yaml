@@ -101,7 +101,7 @@ mix-rule-providers:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/shelllee/clash_rules@main/game/nikke.yaml"
-    path: ./ruleset/Nikke.yaml
+    path: ./ruleset/nikke.yaml
     interval: 86400
 
 prepend-rules:
