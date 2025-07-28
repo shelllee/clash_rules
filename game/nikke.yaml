@@ -1,0 +1,22 @@
+payload:
+  - DOMAIN-SUFFIX,anticheatexpert.com
+  - DOMAIN-SUFFIX,centauriglobal.com
+  - DOMAIN-SUFFIX,gamepass.com
+  - DOMAIN-SUFFIX,iegcom.com
+  - DOMAIN-SUFFIX,intlgame.com
+  - DOMAIN-SUFFIX,nikke-kr.com
+  - DOMAIN-SUFFIX,jp-lobby.nikke-kr.com
+  - DOMAIN-SUFFIX,kr-lobby.nikke-kr.com
+  - DOMAIN-SUFFIX,global-lobby.nikke-kr.com
+  - DOMAIN-SUFFIX,sea-lobby.nikke-kr.com
+  - DOMAIN-SUFFIX,hmt-lobby.nikke-kr.com
+  - DOMAIN-SUFFIX,jp-match.nikke-kr.com
+  - DOMAIN-SUFFIX,us-match.nikke-kr.com
+  - DOMAIN-SUFFIX,kr-match.nikke-kr.com
+  - DOMAIN-SUFFIX,global-match.nikke-kr.com
+  - DOMAIN-SUFFIX,sea-match.nikke-kr.com
+  - DOMAIN-SUFFIX,hmt-match.nikke-kr.com
+  - DOMAIN-SUFFIX,aws-na.intlgame.com
+  - DOMAIN-SUFFIX,nikke-en.com
+  - DOMAIN-SUFFIX,cloud.nikke-kr.com
+  - IP-CIDR,43.152.114.31/32
